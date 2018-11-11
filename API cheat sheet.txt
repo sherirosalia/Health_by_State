@@ -1,0 +1,62 @@
+# Dependencies
+
+import requests
+import json
+
+# URL for GET requests to retrieve vehicle data
+url = "https://api.spacexdata.com/v2/launchpads"
+
+# Print the response object to the console
+print(requests.get(url))
+
+
+# Retrieving data and converting it into JSON
+print(requests.get(url).json())
+
+# Pretty print JSON
+
+response = requests.get(url).json()
+print(json.dumps(response, indent=4, sort_keys=True))
+
+from "par number facts" 1st day exercise
+# If the kind of search is "date" take in two numbers
+if(kind_of_search.lower() == "date"):
+
+  # Collect the month to search for
+  month = input("What month would you like to search for? ")
+  # Collect the day to search for
+  day = input("What day would you like to search for? ")
+
+  # Make an API call to the "date" API and convert response object to JSON
+  response = requests.get(f"{url}{month}/{day}/{kind_of_search.lower()}?json").json()
+  # Print the fact stored within the response
+  print(response["text"])
+
+# If the kind of search is anything but "date" then take one number
+else:
+
+  # Collect the number to search for
+  number = input("What number would you like to search for? ")
+
+  # Make an API call to the API and convert response object to JSON
+  response = requests.get(url + number + "/" +  kind_of_search.lower()+ "?json").json()
+  # Print the fact stored within the response
+  print(response["text"])
+
+
+exercise weather map day 2
+
+cities = ["Paris", "London", "Oslo", "Beijing"]
+
+# set up lists to hold reponse info
+lat = []
+temp = []
+
+# Loop through the list of cities and perform a request for data on each
+for city in cities:
+    response = requests.get(query_url + city).json()
+    lat.append(response['coord']['lat'])
+    temp.append(response['main']['temp'])
+
+print(f"The latitude information received is: {lat}")
+print(f"The temperature information received is: {temp}")
