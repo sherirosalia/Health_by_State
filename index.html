@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Healthy State Evaluation</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/d3Style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1>Using Data to Evaluate Health Risks by State </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <div id="scatter">
+          <!-- We append our chart here. -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <div class="article">
+          <h2>Correlations Discovered Between Health Risks, Age and Income</h2>
+
+          <blockquote><p>"You can never be too rich or too thin." - Wallis Simpson</p></blockquote>
+
+           <p>Whether the statement cited above by the Duchess of Windsor was correct or not is up for debate. However, it provides
+             a springboard to explore health and wealth correlations using data analysis of publicly available government census data. 
+          </p> 
+             
+          <p>Are the rich thinner? Conversely, are the poor heavier?  Let's see what the data says. By selecting "obese" and "income" in the chart above,
+            the "States" (represented by circles) will arrange themselves with the heaviest populations rising to the top. Indeed, the chart does seem to suggest a correlation 
+            between poverty and extra weight as it seems some of our poorest states are among the heaviest. That being said,
+            whether or not this is a coincidence or involves causation would require more research. For example culture, 
+            genetics, weather and injuries can influence weight gain, and those factors are not explored here. </p>
+             
+          <p>The chart above uses <a href = 'https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml' target="_blank"> US census data from 2014, </a> 
+            Explore the data to evaluate potential connections betweem health risks, income and age by utilizing the options along the x and y axes to see how states, obesity rates, smoking and access to healthcare compare to one another. </p>
+
+          <p>Check out a table of the information compiled and visualized above by clicking <a href="table.html">  here.</a></p>
+          <p>For this project javascript and d3.js were used to propogate the table and scatter plot.</p>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer-->
+  <div id="footer">
+    <p>Sheri Rosalia 2019</p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+
+</html>
