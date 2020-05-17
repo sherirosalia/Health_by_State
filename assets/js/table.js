@@ -4,7 +4,7 @@ d3.csv("assets/data/data.csv", function(error, data) {
     var sortAscending = true;
     var div= d3.select('#page-wrap').append('div').attr('id', 'table_holder' )
     var table = d3.select('#table_holder').append('table')
-                    .attr("class","table table-hover table-sm")
+                    .attr("class","table table-hover table-responsive")
                     .attr("style", "padding-right: 5em")
                     
     var titles = d3.keys(data[0]);
