@@ -3,13 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Healthy State Evaluation</title>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <title>The State of Health</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -18,56 +12,110 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <h1>Using Data to Evaluate Health Risks by State </h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12  col-md-9">
-        <div id="scatter">
-          <!-- We append our chart here. -->
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12  col-md-9">
-        <div class="article">
-          <h2>Correlations Discovered Between Health Risks, Age and Income</h2>
+  <div class="container-fluid">
 
+  <div class="container-fluid">
+    <div class=row id="navigation">
+      <div class="col-md-12 ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/images/rose2.jpg" width="25" height="25" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="table.html">Table</a>
+
+            </div>
+          </div>
+        </nav>
+      </div>
+
+
+    </div>
+    </div>
+
+  <div class="container-fluid">
+    <div class=row>
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h2>Health By State</h2>
+      </div>
+      <div class="col-md-2"></div>
+
+    </div>
+
+      <div class=row>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
           <blockquote><p>"You can never be too rich or too thin." - Wallis Simpson</p></blockquote>
 
-           <p>Whether the statement cited above by the Duchess of Windsor was correct or not is up for debate. However, it provides
-             a springboard to explore health and wealth correlations using data analysis of publicly available government census data. 
-          </p> 
-             
-          <p>Are the rich thinner? Conversely, are the poor heavier?  Let's see what the data says. By selecting "obese" and "income" in the chart above,
-            the "States" (represented by circles) will arrange themselves with the heaviest populations rising to the top. Indeed, the chart does seem to suggest a correlation 
-            between poverty and extra weight as it seems some of our poorest states are among the heaviest. That being said,
-            whether or not this is a coincidence or involves causation would require more research. For example culture, 
-            genetics, weather and injuries can influence weight gain, and those factors are not explored here. </p>
-             
-          <p>The chart above uses <a href = 'https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml' target="_blank"> US census data from 2014, </a> 
-            Explore the data to evaluate potential connections betweem health risks, income and age by utilizing the options along the x and y axes to see how states, obesity rates, smoking and access to healthcare compare to one another. </p>
 
-          <p>Check out a table of the information compiled and visualized above by clicking <a href="table.html">  here.</a></p>
-          <p>For this project javascript and d3.js were used to propogate the table and scatter plot.</p>
-
-          
+          <p>Explore correlations between income and health in all 50 states.
+             <a href="table.html">Data</a> courtesy of the US Government Census</p>
         </div>
+        <div class="col-md-2"></div>
+  
       </div>
     </div>
-  </div>
 
-  <!-- Footer-->
-  <div id="footer">
-    <p>Sheri Rosalia 2019</p>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8" id="scatter">
+            <!-- We append our chart here. -->
+          </div>
+          <div class="col-md-2"></div>
+    
+        </div>
+      </div>
+
+        <div class="container-fluid" id="footer">
+          <div class="row">
+            <div class="col-md-12">
+          <!-- <nav class="navbar fixed-bottom navbar-light bg-light"> -->
+            
+              <p>
+                <a class="navbar-brand" href="#"> 
+                
+                  <img src="assets/images/rose2.jpg" width="25" height="25" alt="logo">
+                </a> Sheri Rosalia |         
+                <a href="https://github.com/sherirosalia" class="navbar-light" target="_blank">Github </a> | 
+                <a href="https://linkedin.com" class="navbar-light" target="_blank"> Linkedin </a>  |
+                © 2019  
+
+              </p>  
+          <!-- </nav> -->
+
+        </div>
+
+
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+</div>
+</div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
   <script type="text/javascript" src="assets/js/app.js"></script>
 
 </body>
 
 </html>
+
+
+
+

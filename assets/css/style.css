@@ -1,26 +1,65 @@
-.iframeContainer {
-  padding: 20px;
-  border: 1px solid #e3e3e3;
-}
-
-/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
-html {
-  position: relative;
-  min-height: 100%;
+div {
+  margin-top: 0em;
+  padding: .5em;
 }
 
 body {
-  /* Padding bottom by footer height */
-  padding-bottom: 80px;
+  /* min-height: 100%; */
+}
+blockquote {
+  margin-top: -.5em;
+}
+p{
+  margin: -0.25em;
+  padding: -0.25em;
 }
 
-#footer {
+#navigation {
+  background-color: #f5f5f5;
+  margin: 0;
+
+  
+}  
+
+  
+  /* .iframeContainer {
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+} */
+
+/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+/* html, body {
+  
+  height: 100%;
+
+}
+
+#heading{
+  
+  color: dimgray;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1em;
   position: absolute;
+  margin-top: auto;
+}
+body {
+  /* Padding bottom by footer height */
+  /* padding-top: 80px;
+  padding-bottom: 80px; */
+  /* position: absolute;
+  margin: 0; */
+ 
+/* } */
+
+#footer {
+  position: relative;
   bottom: 0;
-  width: 100%; /* Set the fixed height of the footer here */
-  height: 10px;
+  /* width: 100%;  */
+  /* Set the fixed height of the footer here */
+  /* height: 10px;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 40px; */
   text-align: center;
   background-color: #f5f5f5;
 }
@@ -28,4 +67,4 @@ body {
 #footer p {
   margin: 0;
   font-size: 16px;
-}
+} 

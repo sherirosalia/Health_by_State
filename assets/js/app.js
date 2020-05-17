@@ -2,7 +2,7 @@
 var width = parseInt(d3.select('#scatter')
     .style("width"));
 
-var height = width * 4/5;
+var height = width * 7/10;
 var margin = 10;
 var labelArea = 80;
 var padding = 25;

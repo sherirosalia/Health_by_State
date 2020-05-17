@@ -1,194 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset='UTF-8'>
-	
-	<title>Table of Health Risk Data</title>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!--[if !IE]><!-->
-	<style>
-	* { 
-	  margin: 0; 
-	  padding: 0; 
-     }
-     body { 
-	   font: 14px/1.4 Georgia, Serif; 
-     }
-    #page-wrap {
-	  margin: 50px;
-    }
-    p {
-	 margin: 20px 0; 
-    }
-
-	/* 
-	Generic Styling, for Desktops/Laptops 
-	*/
-	table { 
-		width: 100%; 
-		border-collapse: collapse; 
-	}
-	/* Zebra striping */
-	tr:nth-of-type(odd) { 
-		background: #eee; 
-	}
-	th { 
-		background: #333; 
-		color: white; 
-		font-weight: bold; 
-		cursor: s-resize;
-		background-repeat: no-repeat;
-        background-position: 3% center;
-	}
-	td, th { 
-		padding: 6px; 
-		border: 1px solid #ccc; 
-		text-align: left; 
-	}
-	
-	th.des:after {
-      content: "\21E9";
-    }
-    
-    th.aes:after {
-      content: "\21E7";
-    }
-	
-	/* 
-	Max width before this PARTICULAR table gets nasty
-	This query will take effect for any screen smaller than 760px
-	and also iPads specifically.
-	*/
-	@media 
-	only screen and (max-width: 760px),
-	(min-device-width: 768px) and (max-device-width: 1024px)  {
-	
-		/* Force table to not be like tables anymore */
-		table, thead, tbody, th, td, tr { 
-			display: block; 
-		}
-		
-		/* Hide table headers (but not display: none;, for accessibility) */
-		thead tr { 
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-		
-		tr { border: 1px solid #ccc; }
-		
-		td { 
-			/* Behave  like a "row" */
-			border: none;
-			border-bottom: 1px solid #eee; 
-			position: relative;
-			padding-left: 50%; 
-		}
-		
-		td:before { 
-			/* Now like a table header */
-			position: absolute;
-			/* Top/left values mimic padding */
-			top: 6px;
-			left: 6px;
-			width: 45%; 
-			padding-right: 10px; 
-			white-space: nowrap;
-		}
-		
-		/*
-		Label the data
-		*/
-		td:before {
-		  content: attr(data-th) ": ";
-          font-weight: bold;
-          width: 6.5em;
-          display: inline-block;
-		}
-	}
-	
-	/* Smartphones (portrait and landscape) ----------- */
-	@media only screen
-	and (min-device-width : 320px)
-	and (max-device-width : 480px) {
-		body { 
-			padding: 0; 
-			margin: 0; 
-			width: 320px; }
-		}
-	
-	/* iPads (portrait and landscape) ----------- */
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-		body { 
-			width: 495px; 
-		}
-	}
-	
-	</style>
-	<!--<![endif]-->
+  <meta charset="UTF-8">
+  <title>The State of Health</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+   <link rel="stylesheet" href="assets/css/d3Style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/table.js"></script>
 
 </head>
 
 <body>
+  <div class="container-fluid">
 
-	<div id="page-wrap">
+  <div class="container-fluid">
+    <div class=row id="navigation">
+      <div class="col-md-12 ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="index.html">
+			  <img src="assets/images/rose2.jpg" width="25" height="25" alt="logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			  <div class="navbar-nav">
+				<a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+				<a class="nav-item nav-link" href="table.html">Table</a>
+  
+            </div>
+          </div>
+        </nav>
+      </div>
 
-	<h1>US Health Risks and Income by State </h1>
-    
-	<p>This is the data used for analysis and visualization</p>
 
+    </div>
+    </div>
+
+	<div class="container-fluid">
+		<div class="row">
+		  <div class="col-md-12">
+				
+
+		<h3>Health Risks by State </h3>
+		
+		<p>US Government Census Data</p>
+<!-- <div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10" id="page-wrap"></div>
+		<div class="col-md-1"></div>
+	</div> -->
+	
+		</div>
 	</div>
-	<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-	<script type="text/javascript">
-	  d3.csv("assets/data/data.csv", function(error, data) {
-		  if (error) throw error;
-		  
-		  var sortAscending = true;
-		  var table = d3.select('#page-wrap').append('table');
-		  var titles = d3.keys(data[0]);
-		  var headers = table.append('thead').append('tr')
-		                   .selectAll('th')
-		                   .data(titles).enter()
-		                   .append('th')
-		                   .text(function (d) {
-			                    return d;
-		                    })
-		                   .on('click', function (d) {
-		                	   headers.attr('class', 'header');
-		                	   
-		                	   if (sortAscending) {
-		                	     rows.sort(function(a, b) { return b[d] < a[d]; });
-		                	     sortAscending = false;
-		                	     this.className = 'aes';
-		                	   } else {
-		                		 rows.sort(function(a, b) { return b[d] > a[d]; });
-		                		 sortAscending = true;
-		                		 this.className = 'des';
-		                	   }
-		                	   
-		                   });
-		  
-		  var rows = table.append('tbody').selectAll('tr')
-		               .data(data).enter()
-		               .append('tr');
-		  rows.selectAll('td')
-		    .data(function (d) {
-		    	return titles.map(function (k) {
-		    		return { 'value': d[k], 'name': k};
-		    	});
-		    }).enter()
-		    .append('td')
-		    .attr('data-th', function (d) {
-		    	return d.name;
-		    })
-		    .text(function (d) {
-		    	return d.value;
-		    });
-	  });
-	</script>
+</div>
+
+<div id="page-wrap"></div>
+
+<!-- <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10" id="page-wrap"></div>
+		<div class="col-md-1"></div>
+	</div>
+</div> -->
+
+
+      
+
+        <div class="container-fluid" id="footer">
+          <div class="row">
+            <div class="col-md-12">
+          <!-- <nav class="navbar fixed-bottom navbar-light bg-light"> -->
+            
+              <p>
+                <a class="navbar-brand" href="#"> 
+                
+                  <img src="assets/images/rose2.jpg" width="25" height="25" alt="logo">
+                </a> Sheri Rosalia |         
+                <a href="https://github.com/sherirosalia" class="navbar-light" target="_blank">Github </a> | 
+                <a href="https://linkedin.com" class="navbar-light" target="_blank"> Linkedin </a>  |
+                © 2019  
+
+              </p>  
+          <!-- </nav> -->
+
+        </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+  <script type="text/javascript" src="assets/js/table.js"></script>
+
 </body>
 
 </html>
+
+
+
