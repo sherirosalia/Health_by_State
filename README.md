@@ -1,6 +1,6 @@
 ## State of Health
 
-Interactive scatterplot examines rates of obesity, smoking, poverty, age and health across the US.
+Interactive scatterplot examines rates of obesity, smoking, poverty, age and health across the US.  The link to the deployment is in the "About" section of this page.
 
 ### Frameworks
 D3.js and Bootstrap 4.
@@ -9,8 +9,7 @@ D3.js and Bootstrap 4.
 US Government Census 
 
 ### Files and Folders
-- #### Root Folder
-- HTML (index.html) file
+
 ##### docs
 - contains files and folders for deployment
 
