@@ -8,15 +8,21 @@ D3.js and Bootstrap 4.
 ### Data
 US Government Census 
 
-### Files
-Need to run with a server such as node or http.server (python)
+### Files and Folders
+- #### Root Folder
+- HTML (index.html) file
+##### docs
+- contains files and folders for deployment
+
+##### images
+- screenshots
 
 ### Scatterplot
-<img width="1280" alt="data" src="health_bubble.png">
+<img width="700" alt="data" src="images/health_bubble.png">
 
 ### Table
 
-<img width="1280" alt="data" src="table.png">
+<img width="700" alt="data" src="images/table.png">
 
 
 
